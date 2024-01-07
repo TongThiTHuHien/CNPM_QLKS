@@ -10,8 +10,10 @@ from datetime import datetime
 
 
 class UserRoleEnum(enum.Enum):
-    USER = 1
+    USER = 3
     ADMIN = 2
+    NHANVIEN =4
+
 
 class User(db.Model, UserMixin):
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -92,20 +94,35 @@ class Interaction(BaseModel):
 if __name__ == "__main__":
     from app import app
     with app.app_context():
-          db.create_all()
+        db.create_all()
 
 
         # import hashlib
-        # u = User(name='Admin',
-        #          username='admin',
-        #          password=str(hashlib.md5('1234567'.encode('utf-8')).hexdigest()),
-        #          user_role=UserRoleEnum.ADMIN)
+        # u1 = User(name='NhanVien',
+        #          username='nhanvien',
+        #          password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
+        #          user_role=UserRoleEnum.NHANVIEN)
         #
-        # db.session.add(u)
+        # db.session.add(u1)
         # db.session.commit()
 
 
-        # l1 = LoaiPhong(name='Phòng 1 giường')
+
+
+          # import hashlib
+          #
+          # u1 = User(name='NhanVien',
+          #          username='nhanvien',
+          #          password=str(hashlib.md5('567890'.encode('utf-8')).hexdigest()),
+          #          user_role=UserRoleEnum.NHANVIEN)
+          #
+          # db.session.add(u1)
+          # db.session.commit()
+          #
+
+
+
+# l1 = LoaiPhong(name='Phòng 1 giường')
         # l2 = LoaiPhong(name='Phòng 2 giường')
         #
         #
